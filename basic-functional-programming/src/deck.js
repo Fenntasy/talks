@@ -10,7 +10,7 @@ export default class MyDeck extends Component {
           slide 1
         </Slide>
         <Slide style={{background: 'green'}}>2</Slide>
-        <Slide style={{background: 'red'}}>slide 3</Slide>
+        <Slide style={{background: 'red'}}>3</Slide>
       </Deck>
     )
   }

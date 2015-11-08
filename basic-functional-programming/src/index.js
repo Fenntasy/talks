@@ -13,7 +13,6 @@ const finalCreateStore = compose(
   persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
 )(createStore)
 const store = finalCreateStore(presentationApp)
-let rootElement = document.getElementById('root')
 
 render(
   <div>
@@ -21,7 +20,7 @@ render(
       <MyDeck />
     </Provider>
   </div>,
-  rootElement
+  document.getElementById('root')
 );
 
 // <DebugPanel top right bottom>

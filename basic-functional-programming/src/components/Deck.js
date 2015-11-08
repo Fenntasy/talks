@@ -15,14 +15,16 @@ class Deck extends Component {
     window.addEventListener('keydown', this.registerEvents)
   }
   registerEvents(e) {
+    const { dispatch, currentSlide, children} = this.props
+
     switch(e.keyCode) {
       case KEY_LEFT:
-        this.props.dispatch(slideLeft())
+        dispatch(slideLeft())
       break;
       case KEY_RIGHT:
       case KEY_SPACE:
-        if (this.props.currentSlide < this.props.children.length - 1) {
-          this.props.dispatch(slideRight())
+        if (currentSlide < children.length - 1) {
+          dispatch(slideRight())
         }
       break;
     }
@@ -31,18 +33,20 @@ class Deck extends Component {
     window.removeEventListener(this.registerEvents)
   }
   render() {
-    const { dispatch, currentSlide, children } = this.props
+    const { currentSlide, children } = this.props
+    const renderChildren = function(c, index) {
+      return React.cloneElement(c, {
+        key: index,
+        style: {
+          ...c.props.style,
+          left: ((index - currentSlide) * 100) + 'vw'
+        }
+      })
+    }
+
     return (
-      <div>
-        {React.Children.map(children, function(c, index) {
-          return React.cloneElement(c, {
-            key: index,
-            style: {
-              ...c.props.style,
-              left: ((index - currentSlide) * 100) + 'vw'
-            }
-          })
-        }, this)}
+      <div className="deck">
+        {children.map(renderChildren, this)}
       </div>
     );
   }
