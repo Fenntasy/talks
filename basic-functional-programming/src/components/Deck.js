@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { slideLeft, slideRight } from '../actions'
 
 const KEY_LEFT = 37
 const KEY_RIGHT = 39
@@ -14,17 +12,25 @@ class Deck extends Component {
   componentWillMount() {
     window.addEventListener('keydown', this.registerEvents)
   }
+  componentDidMount() {
+    console.log(this.props.params)
+    if (this.props.params.slide === undefined) {
+      this.props.history.replaceState(null, '/1')
+    }
+  }
   registerEvents(e) {
-    const { dispatch, currentSlide, children} = this.props
-
+    const { children, params, history} = this.props
+    let slide = parseInt(params.slide)
     switch(e.keyCode) {
       case KEY_LEFT:
-        dispatch(slideLeft())
+        if (slide > 1) {
+          history.pushState(null, '/' + (slide - 1))
+        }
       break;
       case KEY_RIGHT:
       case KEY_SPACE:
-        if (currentSlide < children.length - 1) {
-          dispatch(slideRight())
+        if (slide < children.length) {
+          history.pushState(null, '/' + (slide + 1))
         }
       break;
     }
@@ -33,13 +39,14 @@ class Deck extends Component {
     window.removeEventListener(this.registerEvents)
   }
   render() {
-    const { currentSlide, children } = this.props
+    const { currentSlide, children, params } = this.props
+    let slide = parseInt(params.slide) - 1
     const renderChildren = function(c, index) {
       return React.cloneElement(c, {
         key: index,
         style: {
           ...c.props.style,
-          left: ((index - currentSlide) * 100) + 'vw'
+          left: ((index - slide) * 100) + 'vw'
         }
       })
     }
@@ -56,10 +63,4 @@ Deck.propTypes = {
   currentSlide: PropTypes.number
 }
 
-function select(state) {
-  return {
-    currentSlide: state.currentSlide
-  }
-}
-
-export default connect(select)(Deck)
+export default Deck

@@ -13,8 +13,8 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.get('/img/:file', function(req, res) {
-    res.sendFile(path.join(__dirname, 'img/' + req.params.file ))
+app.get('/static/:file', function(req, res) {
+    res.sendFile(path.join(__dirname, 'static/' + req.params.file ))
 })
 
 app.get('/', function(req, res) {
