@@ -6,6 +6,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
+        font-size: 2em;
       }
       .slide {
         width: 100vw;
@@ -15,6 +16,43 @@
         left: 0;
         top: 0;
         transition: left 0.3s;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        background: #ececec;
+        color: #212121;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .slide * {
+          flex: 1 100%;
+          align-self: center;
+      }
+      h1 {
+          font-size: 3rem;
+      }
+      h2 {
+          font-size: 2rem;
+      }
+      .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        align-self: flex-start;
+        text-align: left;
+        margin: 0.5em;
+        position: absolute;
+      }
+      q {
+          font-style: italic;
+          padding: 0 1em;
+      }
+      q:before {
+          content: '\300c';
+      }
+      q:after {
+          content: '\300d';
       }
     </style>
   </head>
