@@ -62,6 +62,42 @@ select(library, ['title'])
 `}
           </CodeBlock>
         </Slide>
+        <Slide>
+          <div className="title">Select is good but what about where?</div>
+          <CodeBlock>{`
+function restrict(table, predicate) {
+    return table.reduce(function(newTable, obj) {
+        if (predicate(obj)) {
+            return newTable
+        } else {
+            return _.without(newTable, obj)
+        }
+    }, table)
+}
+
+// SELECT * FROM library WHERE ed > 1
+restrict(library, function(book) {
+    return book.ed > 1
+})
+// [{title: "SICP", isbn: "0262510871", ed: 2}]
+`}
+          </CodeBlock>
+        </Slide>
+        <Slide>
+          <div className="title">But you forgot the select!</div>
+          <CodeBlock>{`
+
+// SELECT title FROM library WHERE ed > 1
+restrict(
+    select(library, ['title', 'ed']),
+    function(book) {
+        return book.ed > 1
+    }
+)
+// [{title: "SICP", ed: 2}]
+`}
+          </CodeBlock>
+        </Slide>
       </Deck>
     )
   }
