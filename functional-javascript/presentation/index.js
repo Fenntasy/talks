@@ -18,19 +18,19 @@ const images = {
 preloader(images);
 
 const theme = createTheme({
-  primary: "#ccc"
+  primary: "#ececec"
 });
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["slide"]} transitionDuration={500}>
+        <Deck transition={["slide"]} transitionDuration={500} progress="bar">
           <Slide transition={["slide"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={2} textColor="black">
               Functional Programming
             </Heading>
-            <Heading size={1} fit caps lineHeight={2} textColor="#aaa">
+            <Heading size={1} fit caps lineHeight={2}>
               with javascript
             </Heading>
             <Heading size={1} lineHeight={2} textColor="black">
@@ -57,7 +57,7 @@ export default class Presentation extends React.Component {
           <Slide>
             <BlockQuote>
               <Quote textColor="gray" style={{fontSize: "3rem", textAlign: "justify"}}>
-                In case of conflict, <strong style={{color: "white"}}>consider users over authors over implementors over specifiers over theoretical purity</strong>.
+                In case of conflict, <strong style={{color: "#448aff"}}>consider users over authors over implementors over specifiers over theoretical purity</strong>.
                 In other words costs or difficulties to the user should be given more weight than costs to authors;
                 which in turn should be given more weight than costs to implementors; which should be given more weight than costs to authors
                 of the spec itself, which should be given more weight than those proposing changes for theoretical reasons alone.
@@ -68,14 +68,14 @@ export default class Presentation extends React.Component {
               </Cite>
             </BlockQuote>
           </Slide>
-          <Slide bgImage={images.treefalls.replace("/", "")} bgDarken={0.6}>
-            <Heading size={1} lineHeight={2} fit caps>
+          <Slide bgImage={images.treefalls.replace("/", "")} bgDarken={0.8}>
+            <Heading size={1} lineHeight={2} fit caps textColor="white">
               If a tree falls in a forest
             </Heading>
-            <Heading size={1} lineHeight={2} fit caps>
+            <Heading size={1} lineHeight={2} fit caps textColor="white">
               and no one is around to hear it,
             </Heading>
-            <Heading size={1} lineHeight={2} fit caps>
+            <Heading size={1} lineHeight={2} fit caps textColor="white">
               does it make a sound?
             </Heading>
           </Slide>

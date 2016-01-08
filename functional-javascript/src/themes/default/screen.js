@@ -3,7 +3,7 @@
 const defaultColors = {
   primary: "#f9c300",
   secondary: "black",
-  tertiary: "white"
+  tertiary: "#448aff"
 };
 
 const defaultFonts = {
