@@ -1,0 +1,14 @@
+{
+  "name": "react-putting-js-in-your-face",
+  "version": "1.0.0",
+  "description": "Talk introducing React and its ecosystem to AXA BBL June, 14th 2016",
+  "scripts": {
+    "start": "node ./node_modules/markdown-to-slides/index.js slides.md -l template.html -s styles.css -w -o index.html",
+    "build": "node ./node_modules/markdown-to-slides/index.js slides.md -i -l template.html -s styles.css -o index.html"
+  },
+  "author": "Vincent Billey",
+  "license": "MIT",
+  "dependencies": {
+    "markdown-to-slides": "^1.0.3"
+  }
+}
