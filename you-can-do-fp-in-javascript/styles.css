@@ -122,6 +122,8 @@ code {
 
 .lambda {
   animation: appear cubic-bezier(0.4, 0, 1, 1) 5s;
+  font-size: 50vh;
+  color: #e0de17;
 }
 
 .dialog {

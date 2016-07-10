@@ -30,7 +30,7 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-<img class="lambda" src="assets/lambda.png" />
+<div class="lambda">λ</div>
 
 ---
 class: inverse, center
