@@ -12,7 +12,7 @@ body {
   box-shadow: none;
 }
 h1, h2, h3 {
-  font-family: 'Yanone Kaffeesatz';
+  font-family: 'Yanone Kaffeesatz'; 
   font-weight: 400;
   margin-bottom: 40px;
 }
@@ -24,7 +24,7 @@ code {
 }
 .inverse {
   background-color: #272822;
-  color: #777872;
+  color: white; /* #777872; */
   text-shadow: 0 0 20px #333;
 }
 .inverse pre {
@@ -35,7 +35,7 @@ code {
   line-height: 1em;
 }
 .inverse a {
-  color: white;
+  color: #ccc;
   text-decoration: none;
 }
 .inverse a:hover {
@@ -43,6 +43,11 @@ code {
 }
 .inverse strong {
   color: #B3B34B;
+}
+.inverse .remark-inline-code {
+  color: #d6a6a6;
+  background: #545446;
+  padding: 0 10px;
 }
 .center pre {
   text-align: left;
@@ -96,7 +101,20 @@ code {
 .remark-code-line-highlighted {
   background-color: rgba(255, 255, 0, 0.1);
 }
-
+.cover {
+  width: 110vw;
+  height: 110vh;
+  position: absolute;
+  top: -10vh;
+  left: -10vw;
+  -webkit-filter: blur(5px) grayscale(0.6);
+  z-index: -1;
+}
+.remark-slide-content.background-cover {
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 0 10px black;
+}
 @keyframes appear {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -106,3 +124,45 @@ code {
   animation: appear cubic-bezier(0.4, 0, 1, 1) 5s;
 }
 
+.dialog {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  border-radius: 50%;
+  max-height: 8vh;
+  box-shadow: 0 0 15px, 0 0 15px;
+}
+.bubble {
+  position: relative;
+  padding: 15px;
+  margin: 1em 0 3em;
+  color: #fff;
+  background: #075698;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+  background: -moz-linear-gradient(#2e88c4, #075698);
+  background: -o-linear-gradient(#2e88c4, #075698);
+  background: linear-gradient(#2e88c4, #075698);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-left: 40px;
+  background: #075698;
+}
+
+.bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50px;
+  border-width: 20px 0 0 20px;
+  border-style: solid;
+  border-color: #075698 transparent;
+  display: block;
+  width: 0;
+  top: 16px;
+  left: -40px;
+  bottom: auto;
+  border-width: 15px 40px 0 0;
+  border-color: transparent #075698;
+}
