@@ -1,6 +1,6 @@
 class: inverse, center, middle
 
-# Vous pouvez faire la programmation fonctionnelle en JavaScript !
+# Vous pouvez faire de la programmation fonctionnelle en JavaScript !
 
 ## ( et c'est pas si compliqué)
 
@@ -9,7 +9,7 @@ class: inverse, center, middle
 
 # Vincent Billey  
 
-### developeur chez [Synbioz](https://www.synbioz.com)
+### développeur chez [Synbioz](https://www.synbioz.com)
 
 ### @Fenntasy
 
@@ -145,11 +145,13 @@ const user1 = {id: 1, interest_ids: [6, 8, 10, 12] }
 const user2 = {id: 2, interest_ids: [8, 23, 30] }
 
 let hasCommonInterests = false
-for (let i = 0; i < user1.interest_ids.length; i++) {
-  for (let j = 0; j < user2.interest_ids.length; j++) {
-    if (user1.interest_ids[i] === user2.interest_ids[j]) {
-      hasCommonInterests = true
-      break;
+double_loop: {
+  for (let i = 0; i < user1.interest_ids.length; i++) {
+    for (let j = 0; j < user2.interest_ids.length; j++) {
+      if (user1.interest_ids[i] === user2.interest_ids[j]) {
+        hasCommonInterests = true
+        break double_loop;
+      }
     }
   }
 }
