@@ -1,0 +1,5 @@
+* Dates are so hard, it isn't so bad to include moment.js for a single date manipulation
+* Elm use JavaScript Date object
+* Time.Date creates Dates as a Record
+* Timezones are worse
+** Some can lead to errors in Date manipulation (with time saving in France for instance)
