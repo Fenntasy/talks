@@ -1,0 +1,26 @@
+import { defineMessages, injectIntl, intlShape, FormattedMessage
+} from "react-intl"
+
+const messages = defineMessages({
+  label: {
+      id: "send_button.label", defaultMessage: "Send",
+  },
+  tooltip: {
+      id: "send_button.tooltip", defaultMessage: "Send message"
+  }
+});
+
+const SendButton = ({ intl: { formatMessage }, onClick }) => (
+  <button
+      onClick={this.props.onClick}
+      title={formatMessage(messages.tooltip)}
+  >
+      <FormattedMessage {...messages.label} />
+  </button>
+)
+SendButton.propTypes = {
+  intl: intlShape.isRequired,
+  onClick: PropTypes.func.isRequired,
+}
+
+export default injectIntl(SendButton)

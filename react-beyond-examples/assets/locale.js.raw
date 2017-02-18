@@ -1,0 +1,27 @@
+export default locales = {
+  locales: ["en-US", "fr"],
+  messages: {
+    "en-US": {
+      header: {
+        logout: "Logout",
+        settings: "Settings",
+        support: "Support",
+        search: "Search"
+      },
+      tasks: {
+          tasks: "{count, plural, =1 {task} other {tasks}}"
+      }
+    },
+    "fr": {
+      header: {
+        logout: "Déconnexion",
+        settings: "Préférences",
+        support: "Support",
+        search: "Rechercher"
+      },
+      tasks: {
+          tasks: "{count, plural, =1 {tâche} other {tâches}}"
+      }
+    }
+  }
+}

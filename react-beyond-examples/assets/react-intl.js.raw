@@ -1,0 +1,19 @@
+import { IntlProvider,FormattedNumber,FormattedPlural
+} from "react-intl"
+
+const App = ({ name, unreadCount }) => (
+  <p>
+      Hello <b>{name}</b>, you have {" "}
+      <FormattedNumber value={unreadCount} /> {" "}
+      <FormattedPlural value={unreadCount}
+          one="message"
+          other="messages"
+      />.
+  </p>
+)
+ReactDOM.render(
+    <IntlProvider locale="en">
+        <App name="Eric" unreadCount={1000} />
+    </IntlProvider>,
+    document.getElementById("container")
+)
