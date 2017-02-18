@@ -3,3 +3,20 @@
 * Time.Date creates Dates as a Record
 * Timezones are worse
 ** Some can lead to errors in Date manipulation (with time saving in France for instance)
+
+
+== Resources
+
+http://package.elm-lang.org/packages/rluiten/elm-date-extra/8.2.0
+
+http://package.elm-lang.org/packages/justinmimbs/elm-date-extra/latest
+
+http://package.elm-lang.org/packages/Bogdanp/elm-time (http://momentjs.com/timezone/docs/#/data-formats/packed-format/)
+
+https://upload.wikimedia.org/wikipedia/commons/6/60/CMB_Timeline75.jpg
+
+https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Australia_Locator_Blank.svg/2000px-Australia_Locator_Blank.svg.png
+
+https://en.wikipedia.org/wiki/UTC%2B08:45
+
+France and Dom Tom, map to find
