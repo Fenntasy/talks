@@ -49,8 +49,27 @@ background-position: center
 
 ---
 class: cover
+background-image: url(images/australia.png)
+background-size: contain
+background-position: center
 
-![](images/australia.png)
+---
+class: cover
+background-image: url(images/australia2.png)
+background-size: contain
+background-position: center
+
+---
+class: cover
+background-image: url(images/australia3.png)
+background-size: contain
+background-position: center
+
+---
+class: cover
+background-image: url(images/australia4.png)
+background-size: contain
+background-position: center
 
 ---
 class: cover white
@@ -63,7 +82,7 @@ class: cover white
 
 ---
 
-## But how does Elm manage this?
+# But how does Elm manage this?
 
 --
 
@@ -105,7 +124,7 @@ background-image: url(images/help.jpg)
 
 ---
 
-## Months are a Union Type
+# Months are a Union Type
 
 ~~~elm
 type Month
@@ -230,6 +249,7 @@ lilleFPEnd =
     dateFromFields 2017 Feb 23 23 59 59 0
 
 
+isBefore : Bool
 isBefore = is Before date1 date2
 
 ~~~
@@ -252,6 +272,7 @@ lilleFPStart =
     dateFromFields 2017 Feb 23 18 45 0 0
 
 
+currentDate : String
 currentDate =
     format config "%A %d %B %Y %H:%M" lilleFPStart
     -- Jeudi 23 Février 2017 18:45
@@ -280,6 +301,7 @@ elmEuropeStart =
     dateFromFields 2017 Jun 8 8 30 0 0
 
 
+timeToElmEurope : Date.Extra.Duration.DeltaRecord
 timeToElmEurope =
     diff lilleFPStart elmEuropeStart
     -- { year = 0, month = -3, day = -12
@@ -298,7 +320,7 @@ timeToElmEurope =
 
 ---
 
-## Bogdanp/elm-time
+## elm-community/elm-time
 
 --
 
@@ -310,9 +332,98 @@ timeToElmEurope =
 
 --
 
-~~~elm
-> import Time.Date exposing (date)
+### Kind of the same tools
 
-> date 1992 2 28
-Date { year = 1992, month = 2, day = 28 } : Date
+--
+
+### No translation though
+
+---
+
+## Creation
+
+~~~elm
+import Time.Date exposing (date)
+
+date =
+    date 1992 2 28
+-- Date { year = 1992, month = 2, day = 28 } : Date
+~~~
+
+--
+
+## Manipulation
+
+~~~elm
+import Time.Date exposing (date, addMonths)
+
+date =
+    date 1992 2 28
+        |> addMonths 2
+-- Date { year = 1992, month = 4, day = 28 } : Date
+~~~
+
+---
+
+## Comparison
+
+~~~elm
+import Time.Date exposing (date, compare)
+
+date1 =
+    date 1997 5 15
+
+date2 =
+    date 2005 7 18
+
+
+result : Order
+result =
+    compare date1 date2
+-- LT
+~~~
+
+---
+
+## DateTime
+
+~~~elm
+import Time.DateTime exposing (dateTime)
+
+dateTime zero
+-- 0-01-01T00:00:00Z
+
+dateTime { zero | year = 2016 }
+-- 2016-01-01T00:00:00Z
+
+dateTime { zero | year = 2016, month = 5, day = 29, hour = 13 }
+-- 2016-05-29T13:00:00Z
+~~~
+
+---
+
+## Timezone
+
+~~~elm
+import Html exposing (text)
+import Time.TimeZones exposing (europe_paris)
+import Time.ZonedDateTime exposing (zonedDateTime, zero, toISO8601)
+
+
+main =
+    let
+        timezone =
+            europe_paris ()
+
+        date =
+            zonedDateTime timezone
+                { zero
+                    | year = 2017
+                    , month = 2
+                    , day = 23
+                    , hour = 16
+                }
+    in
+        text <| toISO8601 date
+-- 2017-02-23T16:00:00+01:00
 ~~~
