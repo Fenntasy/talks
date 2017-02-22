@@ -1,8 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
-@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+/*@import url(http://fonts.googleapis.com/css?family=Droid+Serif);*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
 body {
-  font-family: 'Droid Serif';
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: medium;
 }
 .remark-container {
@@ -12,9 +13,12 @@ body {
   box-shadow: none;
 }
 h1, h2, h3 {
-  font-family: 'Yanone Kaffeesatz';
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   margin-bottom: 40px;
+}
+h1 {
+  font-variant: small-caps;
 }
 .small * {
   font-size: small !important;
@@ -88,6 +92,24 @@ img {
   background: url(images/dark_synbioz.jpg) no-repeat;
   background-size: cover;
 }
+
+.remark-inline-code {
+  padding: 5px;
+  font-size: 30px;
+  white-space: nowrap;
+  background: #474949;
+  color: #d2d9e1;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 48px;
+  line-height: 56px;
+  margin: 80px auto;
+  border-left: 2px solid #fff;
+  padding-left: 40px;
+}
+
 .cover {
   display: flex;
   align-items: center;
@@ -96,8 +118,11 @@ img {
   background-color: black;
 }
 .cover h2 {
-  background: black;
+  box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
   padding: 10px;
+  text-align: center;
 }
 .white {
   background: white;

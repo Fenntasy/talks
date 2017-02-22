@@ -15,8 +15,9 @@ background-image: url(images/watch.jpg)
 
 ---
 class: cover
+background-image: url(images/time-is-complex.jpg)
 
-# Time is complex
+## Time is complex
 
 ---
 class: cover
@@ -47,34 +48,18 @@ background-position: center
 ## You think you know about them?
 
 ---
+class: cover
 
 ![](images/australia.png)
 
 ---
 class: cover white
 
-<h2>
-  <img
-    src="images/world.svg"
-    class="zoom-france"
-    onClick="javascript: this.classList.toggle('unzoomed');"
-  />
-</h2>
----
-
-## We are lucky in France!
-
---
-
-### DOM TOM?
-
---
-
-### There are 12 timezones if you count all territories
-
---
-
-> Really nothing good came out of colonialism
+<img
+  src="images/world.svg"
+  class="zoom-france"
+  onClick="javascript: this.classList.toggle('unzoomed');"
+/>
 
 ---
 
@@ -104,31 +89,99 @@ function fromString(str) {
 
 --
 
-- 21 kb for moment
+### 21 kb for moment
 --
 
-- 68 kb if you add locales
+### 68 kb if you add locales
 --
 
-- between 3 and 26 kb if you want timezone support
+### between 3 and 26 kb if you want timezone support
 
 ---
+class: cover
+background-image: url(images/help.jpg)
 
 ## That being said, Elm will help you!
 
---
+---
 
-### Months are a Union Type
+## Months are a Union Type
 
---
+~~~elm
+type Month
+    = Jan
+    | Feb
+    | Mar
+    | Apr
+    | May
+    | Jun
+    | Jul
+    | Aug
+    | Sep
+    | Oct
+    | Nov
+    | Dec
+~~~
+
+---
 
 ### `fromString : String -> Result String Date`
 
 --
 
+~~~elm
+import Date exposing (Date)
+
+
+type alias Model =
+    { myDate = Date
+    }
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg  of
+        UserHasEnteredDate dateString ->
+            case  Date.fromString dateString of
+                Ok date ->
+                    ( { model | myDate = date }, Cmd.none )
+
+                Err error ->
+                    Debug.crash error
+~~~
+
+---
+
 ### `now : Task x Date`
 
 --
+
+~~~elm
+import Date exposing (Date)
+
+
+type alias Model =
+    { currentDate = Maybe Date
+    }
+
+
+init : ( Model, Cmd Msg )
+init  =
+    ( initModel
+    , Date.now |> Task.perform CurrentDate
+    )
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg  of
+        CurrentDate today ->
+            ( { model | currentDate = Just today }, Cmd.none )
+~~~
+
+---
+class: cover
+background-image: url(images/community.jpg)
 
 ## And the community is here to help
 
@@ -243,10 +296,6 @@ timeToElmEurope =
 
 > Please be warned that there are many ways to manipulate dates that produce basically incorrect results.
 
---
-
-[demo of calendario]
-
 ---
 
 ## Bogdanp/elm-time
@@ -257,11 +306,13 @@ timeToElmEurope =
 
 --
 
-### Pure Elm dates and time (and timezones) with Records
+### Pure Elm dates and time with Records
 
 --
 
 ~~~elm
+> import Time.Date exposing (date)
+
 > date 1992 2 28
 Date { year = 1992, month = 2, day = 28 } : Date
 ~~~

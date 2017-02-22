@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg id="svg2985" width="2560" height="1314" viewBox="82.992 45.607 2528.5721 1428.3294" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,500,700,900,100italic,300italic,400,400italic,500italic,700italic,900italic);</style>
+    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic);</style>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
       <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
     </pattern>
@@ -3164,20 +3164,17 @@
     <path id="tk-" class="landxx coastxx tk" d="m 2707.92,843.766 c -0.12,-0.1 0.18,-0.08 -0.11,-0.14 -0.16,-0.03 -0.27,0.139 0.1,0.203"/>
     <circle id="tk." class="circlexx tk" r="6.01303" cy="840.579" cx="2708.51"/>
   </g>
-  <text x="486.76" y="394.836" style="font-size: 19.9px; font-family: Roboto; white-space: pre;" transform="matrix(1.415349, 0, 0, 1.415351, 181.625198, 149.602951)">Guyane</text>
+  <text x="486.76" y="394.836" style="font-size: 19.9px; font-family: Roboto; white-space: pre;" transform="matrix(1.368781, 0, 0, 1.368783, 207.370758, 167.128555)">Guyane</text>
   <text x="793.971" y="598.321" style="font-size: 25.7px; font-family: Roboto; white-space: pre;">St-Barthélemy</text>
-  <text x="941.878" y="722.872" style="font-size: 24.3px; font-family: Roboto; white-space: pre;" transform="matrix(1, 0, 0, 1.000002, -124.853455, -92.940328)">Guadeloupe</text>
+  <text x="941.878" y="722.872" style="font-size: 24.3px; font-family: Roboto; white-space: pre;" transform="matrix(1.071404, 0, 0, 1.071407, -192.107513, -144.995392)">Guadeloupe</text>
   <text x="524.727" y="484.405" style="font-size: 18.9px; font-family: Roboto; white-space: pre;" transform="matrix(1.354744, 0, 0, 1.354745, -21.980412, -10.130368)">St-Martin</text>
-  <text x="930.677" y="746.801" style="font-size: 23.5px; font-family: Roboto; white-space: pre;" transform="matrix(1, 0, 0, 1.000002, -113.65271, -88.573803)">Martinique</text>
-  <text x="433.106" y="178.919" style="font-size: 17.5px; font-family: Roboto; white-space: pre;" transform="matrix(1.183912, 0, 0, 1.183911, 369.415771, 167.240051)">Saint-Pierre-et-Miquelon</text>
-  <text x="1097.329" y="616.753" style="font-size: 23.2px; font-family: Roboto; white-space: pre;" transform="matrix(1.655635, 0, 0, 1.655638, -120.686012, -65.748764)">Réunion</text>
+  <text x="930.677" y="746.801" style="font-size: 23.5px; font-family: Roboto; white-space: pre;" transform="matrix(1.123058, 0, 0, 1.12306, -228.179321, -177.821793)">Martinique</text>
+  <text x="433.106" y="178.919" style="font-size: 17.5px; font-family: Roboto; white-space: pre;" transform="matrix(1.423105, 0, 0, 1.423104, 221.183289, 128.176849)">Saint-Pierre-et-Miquelon</text>
+  <text x="1097.329" y="616.753" style="font-size: 23.2px; font-family: Roboto; white-space: pre;" transform="matrix(1.255867, 0, 0, 1.255868, 341.924011, 179.963959)">Réunion</text>
   <text x="1979.756" y="1356.344" style="font-size: 20.6px; font-family: Roboto; white-space: pre;" transform="matrix(1.000001, 0, 0, 1, 21.047218, 9.02124)">Terre Adélie</text>
   <text x="1360.985" y="849.576" style="font-size: 16.1px; font-family: Roboto; white-space: pre;" transform="matrix(1.000001, 0, 0, 0.999997, 749.076697, 469.776738)">Base Dumont-d'Urville</text>
   <text x="812.495" y="468.728" style="font-size: 19.1px; font-family: Roboto; white-space: pre;" transform="matrix(1.545211, 0, 0, 1.54521, 240.482925, 151.581833)">Mayotte</text>
   <ellipse transform="matrix(0.999998, 0, 0, 0.999999, 653.276887, 275.766872)" cx="245.514" cy="78.231" rx="6.288" ry="6.288" style="fill: none; stroke: rgb(246, 102, 86);"/>
-  <defs>
-    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic);</style>
-  </defs>
   <ellipse transform="matrix(0.999995, 0, 0, 0.999999, 1368.456483, 792.117443)" cx="245.512" cy="78.231" rx="6.288" ry="6.288" style="fill: none; stroke: rgb(246, 102, 86);"/>
   <ellipse transform="matrix(0.999995, 0, 0, 0.999999, 1441.793764, 864.06068)" cx="245.512" cy="78.231" rx="6.288" ry="6.288" style="fill: none; stroke: rgb(246, 102, 86);"/>
   <ellipse transform="matrix(0.999998, 0, 0, 0.999999, 1253.062349, 1026.459067)" cx="487.807" cy="155.441" rx="12.493" ry="12.493" style="fill: none; stroke: rgb(246, 102, 86);"/>
@@ -3188,7 +3185,7 @@
   <ellipse transform="matrix(1.000015, 0, 0, 0.999999, 1344.721233, 831.641918)" cx="245.502" cy="78.231" rx="6.288" ry="6.288" style="fill: none; stroke: rgb(246, 102, 86);"/>
   <ellipse transform="matrix(0.999995, 0, 0, 0.999999, 1380.454179, 771.44276)" cx="245.506" cy="78.231" rx="6.288" ry="6.288" style="fill: none; stroke: rgb(246, 102, 86);"/>
   <ellipse transform="matrix(0.999995, 0, 0, 0.999999, 1435.491044, 820.723217)" cx="245.506" cy="78.231" rx="6.288" ry="6.288" style="fill: none; stroke: rgb(246, 102, 86);"/>
-  <text x="4108.582" y="1388.004" style="font-size: 30.7px; font-family: Roboto; white-space: pre;" transform="matrix(1.000001, 0, 0, 1.000003, -1631.353219, -526.408449)">Wallis-et-Futuna</text>
-  <text x="2402.245" y="975.723" style="font-size: 24.1px; font-family: Roboto; white-space: pre;">Nouvelle-Calédonie</text>
+  <text x="4108.582" y="1388.004" style="font-size: 30.7px; font-family: Roboto; white-space: pre;" transform="matrix(1.000001, 0, 0, 1.000003, -1671.374878, -517.172729)">Wallis-et-Futuna</text>
+  <text x="2366.843" y="979.687" style="font-size: 28.2px; font-family: Roboto; white-space: pre;">Nouvelle-Calédonie</text>
   <text x="2546.229" y="958.803" style="font-size: 36; font-family: Roboto; white-space: pre;"> </text>
 </svg>
