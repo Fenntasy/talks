@@ -1,3 +1,6 @@
+class: cover
+background-image: url(images/watch.jpg)
+
 # Manipulating Time in Elm
 
 ---
@@ -11,14 +14,17 @@
 ### @Fenntasy on twitter and github
 
 ---
+class: cover
 
 # Time is complex
 
---
+---
+class: cover
+background-image: url(images/plank-time.jpg)
+background-size: contain
+background-position: center
 
 ## Just ask theoritical physicists
-
-![](images/plank-time.jpg)
 
 ---
 
@@ -122,8 +128,48 @@ function fromString(str) {
 
 --
 
+### Creation
+
+--
+
+~~~elm
+import Date exposing (Month(..))
+import Date.Extra.Create exposing (dateFromFields)
+
+
+lilleFPStart =
+    dateFromFields 2017 Feb 23 18 45 0 0
+
+
+lilleFPEnd =
+    dateFromFields 2017 Feb 23 23 59 59 0
+~~~
+---
+
+## rluiten/elm-date-extra
+
+
 ### Comparison
 
+--
+
+~~~elm
+import Date exposing (Month(..))
+import Date.Extra.Create exposing (dateFromFields)
+import Date.Extra.Compare exposing (is, Compare2(..))
+
+
+lilleFPStart =
+    dateFromFields 2017 Feb 23 18 45 0 0
+
+
+lilleFPEnd =
+    dateFromFields 2017 Feb 23 23 59 59 0
+
+
+isBefore = is Before date1 date2
+
+~~~
 ---
 
 ## rluiten/elm-date-extra
@@ -131,12 +177,23 @@ function fromString(str) {
 
 ### Translation
 
----
+--
 
-## rluiten/elm-date-extra
+~~~elm
+
+import Date exposing (Month(..))
+import Date.Extra.Create exposing (dateFromFields)
 
 
-### Creation
+lilleFPStart =
+    dateFromFields 2017 Feb 23 18 45 0 0
+
+
+currentDate =
+    format config "%A %d %B %Y %H:%M" lilleFPStart
+    -- Jeudi 23 Février 2017 18:45
+
+~~~
 
 ---
 
@@ -145,12 +202,40 @@ function fromString(str) {
 
 ### Duration
 
+~~~elm
+
+import Date exposing (Month(..))
+import Date.Extra.Create exposing (dateFromFields)
+import Date.Extra.Duration exposing (diff)
+
+
+lilleFPStart =
+    dateFromFields 2017 Feb 23 18 45 0 0
+
+
+elmEuropeStart =
+    dateFromFields 2017 Jun 8 8 30 0 0
+
+
+timeToElmEurope =
+    diff lilleFPStart elmEuropeStart
+    -- { year = 0, month = -3, day = -12
+    -- , hour = -13, minute = -45, second = 0
+    -- , millisecond = 0
+    -- }
+
+
+~~~
 
 ---
 
 ## rluiten/elm-date-extra
 
 > Please be warned that there are many ways to manipulate dates that produce basically incorrect results.
+
+--
+
+[demo of calendario]
 
 ---
 
