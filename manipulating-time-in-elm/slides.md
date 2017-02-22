@@ -7,11 +7,11 @@ background-image: url(images/watch.jpg)
 
 # Who am I?
 
-## Vincent Billey
+## Vincent Billey
 
-### Developer @Synbioz
+### Developer @Synbioz
 
-### @Fenntasy on twitter and github
+### @Fenntasy on twitter and github
 
 ---
 class: cover
@@ -24,19 +24,19 @@ background-image: url(images/plank-time.jpg)
 background-size: contain
 background-position: center
 
-## Just ask theoritical physicists
+## Just ask theoritical physicists
 
 ---
 
-# Dates are confusing
+# Dates are confusing
 
 --
 
-## What is the first day of the week?
+## What is the first day of the week?
 
 --
 
-## What year is it by the way?
+## What year is it by the way?
 
 ---
 
@@ -44,19 +44,29 @@ background-position: center
 
 --
 
-## You think you know about them?
+## You think you know about them?
 
 ---
 
 ![](images/australia.png)
 
 ---
+class: cover white
+
+<h2>
+  <img
+    src="images/world.svg"
+    class="zoom-france"
+    onClick="javascript: this.classList.toggle('unzoomed');"
+  />
+</h2>
+---
 
 ## We are lucky in France!
 
 --
 
-### DOM TOM?
+### DOM TOM?
 
 --
 
@@ -64,11 +74,11 @@ background-position: center
 
 --
 
-> Really nothing good came out of colonialism
+> Really nothing good came out of colonialism
 
 ---
 
-## But how does Elm manage this?
+## But how does Elm manage this?
 
 --
 
@@ -104,31 +114,31 @@ function fromString(str) {
 
 ---
 
-## That being said, Elm will help you!
+## That being said, Elm will help you!
 
 --
 
-### Months are a Union Type
+### Months are a Union Type
 
 --
 
-### `fromString : String -> Result String Date`
+### `fromString : String -> Result String Date`
 
 --
 
-### `now : Task x Date`
+### `now : Task x Date`
 
 --
 
-## And the community is here to help
+## And the community is here to help
 
 ---
 
-## rluiten/elm-date-extra
+## rluiten/elm-date-extra
 
 --
 
-### Creation
+### Creation
 
 --
 
@@ -146,10 +156,10 @@ lilleFPEnd =
 ~~~
 ---
 
-## rluiten/elm-date-extra
+## rluiten/elm-date-extra
 
 
-### Comparison
+### Comparison
 
 --
 
@@ -172,10 +182,10 @@ isBefore = is Before date1 date2
 ~~~
 ---
 
-## rluiten/elm-date-extra
+## rluiten/elm-date-extra
 
 
-### Translation
+### Translation
 
 --
 
@@ -197,10 +207,10 @@ currentDate =
 
 ---
 
-## rluiten/elm-date-extra
+## rluiten/elm-date-extra
 
 
-### Duration
+### Duration
 
 ~~~elm
 
@@ -229,7 +239,7 @@ timeToElmEurope =
 
 ---
 
-## rluiten/elm-date-extra
+## rluiten/elm-date-extra
 
 > Please be warned that there are many ways to manipulate dates that produce basically incorrect results.
 
@@ -243,11 +253,11 @@ timeToElmEurope =
 
 --
 
-### when you need the big guns
+### when you need the big guns
 
 --
 
-### Pure Elm dates and time (and timezones) with Records
+### Pure Elm dates and time (and timezones) with Records
 
 --
 
