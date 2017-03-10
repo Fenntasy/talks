@@ -166,7 +166,7 @@ update msg model =
                     ( { model | myDate = date }, Cmd.none )
 
                 Err error ->
-                    Debug.crash error
+                    ( { model | error = error }, Cmd.none )
 ~~~
 
 ---
@@ -219,11 +219,11 @@ import Date exposing (Month(..))
 import Date.Extra.Create exposing (dateFromFields)
 
 
-lilleFPStart =
+date1 =
     dateFromFields 2017 Feb 23 18 45 0 0
 
 
-lilleFPEnd =
+date2 =
     dateFromFields 2017 Feb 23 23 59 59 0
 ~~~
 ---
@@ -241,11 +241,11 @@ import Date.Extra.Create exposing (dateFromFields)
 import Date.Extra.Compare exposing (is, Compare2(..))
 
 
-lilleFPStart =
+date1 =
     dateFromFields 2017 Feb 23 18 45 0 0
 
 
-lilleFPEnd =
+date2 =
     dateFromFields 2017 Feb 23 23 59 59 0
 
 
@@ -268,13 +268,13 @@ import Date exposing (Month(..))
 import Date.Extra.Create exposing (dateFromFields)
 
 
-lilleFPStart =
+date1 =
     dateFromFields 2017 Feb 23 18 45 0 0
 
 
 currentDate : String
 currentDate =
-    format config "%A %d %B %Y %H:%M" lilleFPStart
+    format config "%A %d %B %Y %H:%M" date1
     -- Jeudi 23 Février 2017 18:45
 
 ~~~
@@ -293,17 +293,17 @@ import Date.Extra.Create exposing (dateFromFields)
 import Date.Extra.Duration exposing (diff)
 
 
-lilleFPStart =
+date1 =
     dateFromFields 2017 Feb 23 18 45 0 0
 
 
-elmEuropeStart =
+date2 =
     dateFromFields 2017 Jun 8 8 30 0 0
 
 
-timeToElmEurope : Date.Extra.Duration.DeltaRecord
-timeToElmEurope =
-    diff lilleFPStart elmEuropeStart
+timeDiff : Date.Extra.Duration.DeltaRecord
+timeDiff =
+    diff date1 date2
     -- { year = 0, month = -3, day = -12
     -- , hour = -13, minute = -45, second = 0
     -- , millisecond = 0
