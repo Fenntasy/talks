@@ -23,10 +23,17 @@ h1, h2, h3 {
   font-weight: 400;
   margin-bottom: 40px;
 }
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 h1 {
   font-variant: small-caps;
 }
-h3 {
+h3, p {
   text-align: center;
 }
 .small * {
@@ -99,7 +106,10 @@ img {
 .remark-slide-content {
   color: white;
   background: url(images/dark_synbioz.jpg) no-repeat;
-  background-size: cover;
+}
+.remark-slide-content:not(.cover) {
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 .remark-inline-code {
@@ -175,15 +185,20 @@ background-image: url(images/watch.jpg)
 
 # Who am I?
 
-## Vincent Billey
+<img src="images/vbilley.jpg" style="position: absolute; top: 30px; right: 30px; border-radius: 10px;" />
 
-### Developer @Synbioz
+### Vincent Billey
 
-### @Fenntasy on twitter and github
+### Developer [@Synbioz](https://twitter.com/synbioz)
+
+![](images/Synbioz_white_nobg.png)
+
+### @Fenntasy on [Twitter](https://twitter.com/Fenntasy) and [Github](https://github.com/Fenntasy)
 
 ---
 class: cover
 background-image: url(images/time-is-complex.jpg)
+background-size: 100%
 
 ## Time is complex
 
@@ -287,6 +302,7 @@ function fromString(str) {
 ---
 class: cover
 background-image: url(images/help.jpg)
+background-size: cover
 
 ## That being said, Elm will help you!
 
@@ -595,6 +611,29 @@ main =
         text <| toISO8601 date
 -- 2017-02-23T16:00:00+01:00
 ~~~
+
+---
+
+# Takeaways
+
+--
+
+## Don't ignore time zones when building apps
+
+--
+
+## Don't trap yourself with built-in Dates
+
+--
+
+## Look at Elm Native code
+
+---
+class: cover
+background-image: url(images/watch.jpg)
+
+## Questions?
+
 		</textarea>
 		<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
 		<script>
