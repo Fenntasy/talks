@@ -7,15 +7,20 @@ background-image: url(images/watch.jpg)
 
 # Who am I?
 
-## Vincent Billey
+<img src="images/vbilley.jpg" style="position: absolute; top: 30px; right: 30px; border-radius: 10px;" />
 
-### Developer @Synbioz
+### Vincent Billey
 
-### @Fenntasy on twitter and github
+### Developer [@Synbioz](https://twitter.com/synbioz)
+
+![](images/Synbioz_white_nobg.png)
+
+### @Fenntasy on [Twitter](https://twitter.com/Fenntasy) and [Github](https://github.com/Fenntasy)
 
 ---
 class: cover
 background-image: url(images/time-is-complex.jpg)
+background-size: 100%
 
 ## Time is complex
 
@@ -119,6 +124,7 @@ function fromString(str) {
 ---
 class: cover
 background-image: url(images/help.jpg)
+background-size: cover
 
 ## That being said, Elm will help you!
 
@@ -427,3 +433,25 @@ main =
         text <| toISO8601 date
 -- 2017-02-23T16:00:00+01:00
 ~~~
+
+---
+
+# Takeaways
+
+--
+
+## Don't ignore time zones when building apps
+
+--
+
+## Don't trap yourself with built-in Dates
+
+--
+
+## Look at Elm Native code
+
+---
+class: cover
+background-image: url(images/watch.jpg)
+
+## Questions?

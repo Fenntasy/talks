@@ -17,10 +17,17 @@ h1, h2, h3 {
   font-weight: 400;
   margin-bottom: 40px;
 }
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 h1 {
   font-variant: small-caps;
 }
-h3 {
+h3, p {
   text-align: center;
 }
 .small * {
@@ -93,7 +100,10 @@ img {
 .remark-slide-content {
   color: white;
   background: url(images/dark_synbioz.jpg) no-repeat;
-  background-size: cover;
+}
+.remark-slide-content:not(.cover) {
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 .remark-inline-code {

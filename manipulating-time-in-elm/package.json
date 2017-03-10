@@ -9,6 +9,6 @@
   "author": "Vincent Billey",
   "license": "MIT",
   "dependencies": {
-    "markdown-to-slides": "^1.0.3"
+    "markdown-to-slides": "^1.0.5"
   }
 }
