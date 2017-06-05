@@ -18,7 +18,7 @@ h1, h2, h3 {
   margin-bottom: 40px;
 }
 a {
-  color: white;
+  /*color: white;*/
   text-decoration: none;
 }
 a:hover {
@@ -159,7 +159,7 @@ blockquote {
 }
 
 .zoom-france {
-  transform: scale(24.7) translateY(28%) translateX(1.8%);
+  transform: scale(15) translateY(28%) translateX(1.8%);
   transition: transform 0.5s;
 }
 

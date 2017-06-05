@@ -106,6 +106,7 @@ init =
 type Msg
     = SetToday Date.Date
 
+
 update msg model =
     case msg of
         SetToday date ->
@@ -118,6 +119,7 @@ class: center
 
 ## rluiten/elm-date-extra
 
+--
 ```elm
 today =
   Date.Extra.Create.dateFromFields 2017 Date.Jun 9 9 0 0 0
@@ -142,8 +144,9 @@ usFormatedDate =
 [See on Ellie](https://ellie-app.com/3nVNnVDv8m7a1/0)
 
 ---
+class: center
 
-`rluiten/elm-date-extra`
+## rluiten/elm-date-extra
 --
 
 ### create
@@ -157,7 +160,8 @@ usFormatedDate =
 
 ### translate
 
---
+---
+class: center, middle
 
 > Please be warned that there are many ways to manipulate dates that produce basically incorrect results.
 
@@ -194,182 +198,8 @@ background-size: contain
 background-position: center
 
 ---
-class: cover white
 
-<img
-  src="images/world.svg"
-  class="zoom-france"
-  onClick="javascript: this.classList.toggle('unzoomed');"
-/>
-
----
-
-# Months are a Union Type
-
-~~~elm
-type Month
-    = Jan
-    | Feb
-    | Mar
-    | Apr
-    | May
-    | Jun
-    | Jul
-    | Aug
-    | Sep
-    | Oct
-    | Nov
-    | Dec
-~~~
-
----
-
-### `fromString : String -> Result String Date`
-
---
-
-~~~elm
-import Date exposing (Date)
-
-
-type alias Model =
-    { myDate = Date
-    }
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg  of
-        UserHasEnteredDate dateString ->
-            case  Date.fromString dateString of
-                Ok date ->
-                    ( { model | myDate = date }, Cmd.none )
-
-                Err error ->
-                    Debug.crash error
-~~~
-
----
-
-## rluiten/elm-date-extra
-
---
-
-### Creation
-
---
-
-~~~elm
-import Date exposing (Month(..))
-import Date.Extra.Create exposing (dateFromFields)
-
-
-lilleFPStart =
-    dateFromFields 2017 Feb 23 18 45 0 0
-
-
-lilleFPEnd =
-    dateFromFields 2017 Feb 23 23 59 59 0
-~~~
----
-
-## rluiten/elm-date-extra
-
-
-### Comparison
-
---
-
-~~~elm
-import Date exposing (Month(..))
-import Date.Extra.Create exposing (dateFromFields)
-import Date.Extra.Compare exposing (is, Compare2(..))
-
-
-lilleFPStart =
-    dateFromFields 2017 Feb 23 18 45 0 0
-
-
-lilleFPEnd =
-    dateFromFields 2017 Feb 23 23 59 59 0
-
-
-isBefore : Bool
-isBefore = is Before date1 date2
-
-~~~
----
-
-## rluiten/elm-date-extra
-
-
-### Translation
-
---
-
-~~~elm
-
-import Date exposing (Month(..))
-import Date.Extra.Create exposing (dateFromFields)
-
-
-lilleFPStart =
-    dateFromFields 2017 Feb 23 18 45 0 0
-
-
-currentDate : String
-currentDate =
-    format config "%A %d %B %Y %H:%M" lilleFPStart
-    -- Jeudi 23 Février 2017 18:45
-
-~~~
-
----
-
-## rluiten/elm-date-extra
-
-
-### Duration
-
-~~~elm
-
-import Date exposing (Month(..))
-import Date.Extra.Create exposing (dateFromFields)
-import Date.Extra.Duration exposing (diff)
-
-
-lilleFPStart =
-    dateFromFields 2017 Feb 23 18 45 0 0
-
-
-elmEuropeStart =
-    dateFromFields 2017 Jun 8 8 30 0 0
-
-
-timeToElmEurope : Date.Extra.Duration.DeltaRecord
-timeToElmEurope =
-    diff lilleFPStart elmEuropeStart
-    -- { year = 0, month = -3, day = -12
-    -- , hour = -13, minute = -45, second = 0
-    -- , millisecond = 0
-    -- }
-
-
-~~~
-
----
-
-## rluiten/elm-date-extra
-
-> Please be warned that there are many ways to manipulate dates that produce basically incorrect results.
-
----
-
-## elm-community/elm-time
-
---
-
-### when you need the big guns
+`elm-community/elm-time`
 
 --
 
@@ -377,73 +207,11 @@ timeToElmEurope =
 
 --
 
-### Kind of the same tools
+### No translation though
 
 --
 
-### No translation though
-
----
-
-## Creation
-
-~~~elm
-import Time.Date exposing (date)
-
-date =
-    date 1992 2 28
--- Date { year = 1992, month = 2, day = 28 } : Date
-~~~
-
---
-
-## Manipulation
-
-~~~elm
-import Time.Date exposing (date, addMonths)
-
-date =
-    date 1992 2 28
-        |> addMonths 2
--- Date { year = 1992, month = 4, day = 28 } : Date
-~~~
-
----
-
-## Comparison
-
-~~~elm
-import Time.Date exposing (date, compare)
-
-date1 =
-    date 1997 5 15
-
-date2 =
-    date 2005 7 18
-
-
-result : Order
-result =
-    compare date1 date2
--- LT
-~~~
-
----
-
-## DateTime
-
-~~~elm
-import Time.DateTime exposing (dateTime)
-
-dateTime zero
--- 0-01-01T00:00:00Z
-
-dateTime { zero | year = 2016 }
--- 2016-01-01T00:00:00Z
-
-dateTime { zero | year = 2016, month = 5, day = 29, hour = 13 }
--- 2016-05-29T13:00:00Z
-~~~
+### Heavier package
 
 ---
 
@@ -451,14 +219,16 @@ dateTime { zero | year = 2016, month = 5, day = 29, hour = 13 }
 
 ~~~elm
 import Html exposing (text)
-import Time.TimeZones exposing (europe_paris)
+import Time.TimeZones exposing (australia_eucla)
 import Time.ZonedDateTime exposing (zonedDateTime, zero, toISO8601)
 
+displayTime : Time.Time -> String
 
+main : Html.Html msg
 main =
     let
         timezone =
-            europe_paris ()
+            australia_eucla ()
 
         date =
             zonedDateTime timezone
@@ -469,10 +239,27 @@ main =
                     , hour = 16
                 }
     in
-        text <| toISO8601 date
--- 2017-02-23T16:00:00+01:00
+        text (toTimestamp date |> displayTime)
+
+        -- 2017 Feb 23 8:15
 ~~~
 
+[See on Ellie](https://ellie-app.com/3pq4GzDpFh4a1/0)
+
+---
+class: cover white
+
+<img
+  src="images/world.svg"
+  class="zoom-france"
+/>
+
+---
+class: cover white
+
+<img
+  src="images/world-with-pins.svg"
+/>
 ---
 
 # Takeaways
@@ -487,10 +274,8 @@ main =
 
 --
 
-## Look at Elm Native code
+## Think about what you want to do
 
----
-class: cover
-background-image: url(images/watch.jpg)
+--
 
-## Questions?
+## []()
