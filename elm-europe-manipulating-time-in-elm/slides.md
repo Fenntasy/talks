@@ -19,6 +19,9 @@ background-size: cover
 ### @Fenntasy on [Twitter](https://twitter.com/Fenntasy) and [Github](https://github.com/Fenntasy)
 
 ---
+class: inverse
+
+---
 class: cover
 background-image: url(images/plank-time.jpg)
 background-size: contain
@@ -28,7 +31,6 @@ background-position: center
 class: cover
 background-image: url(images/time-is-complex.jpg)
 background-size: cover
-
 
 ---
 class: cover
@@ -61,7 +63,8 @@ type alias Model =
 
 init =
     ( { date = Nothing }
-    , Date.now |> Task.perform SetToday
+    , Date.now
+      |> Task.perform SetToday
     )
 
 ```
@@ -78,7 +81,8 @@ type alias Model =
 
 init =
     ( { date = Nothing }
-    , Date.now |> Task.perform SetToday
+    , Date.now
+      |> Task.perform SetToday
     )
 
 
@@ -99,7 +103,8 @@ type alias Model =
 
 init =
     ( { date = Nothing }
-    , Date.now |> Task.perform SetToday
+    , Date.now
+      |> Task.perform SetToday
     )
 
 
@@ -122,7 +127,7 @@ class: center
 --
 ```elm
 today =
-  Date.Extra.Create.dateFromFields 2017 Date.Jun 9 9 0 0 0
+  Date.Extra.Create.dateFromFields 2017 Date.Jun 9 10 0 0 0
 ```
 
 --
@@ -163,6 +168,11 @@ class: center
 ---
 class: center, middle
 
+# BUT
+
+---
+class: center, middle
+
 > Please be warned that there are many ways to manipulate dates that produce basically incorrect results.
 
 
@@ -171,7 +181,13 @@ class: cover
 background-image: url(images/clocks.jpg)
 background-size: cover
 
-# Timezones
+# ![](images/tada.png) &nbsp; Timezones &nbsp; ![](images/tada.png)
+
+---
+class: cover
+background-image: url(images/Standard_World_Time_Zones.png)
+background-size: contain
+background-position: center
 
 ---
 class: cover
@@ -214,13 +230,19 @@ background-position: center
 ### Heavier package
 
 ---
+class: middle, center
+
+<video loop autoplay preload width="100%">
+  <source src="images/HUGE.mp4" />
+</video>
+
+---
 
 ## Timezone
 
 ~~~elm
-import Html exposing (text)
 import Time.TimeZones exposing (australia_eucla)
-import Time.ZonedDateTime exposing (zonedDateTime, zero, toISO8601)
+import Time.ZonedDateTime exposing (zonedDateTime, zero, toTimestamp)
 
 displayTime : Time.Time -> String
 
@@ -239,9 +261,7 @@ main =
                     , hour = 16
                 }
     in
-        text (toTimestamp date |> displayTime)
-
-        -- 2017 Feb 23 8:15
+        text (toTimestamp date |> displayTime) -- 2017 Feb 23 8:15
 ~~~
 
 [See on Ellie](https://ellie-app.com/3pq4GzDpFh4a1/0)
@@ -260,6 +280,7 @@ class: cover white
 <img
   src="images/world-with-pins.svg"
 />
+
 ---
 
 # Takeaways
@@ -278,4 +299,4 @@ class: cover white
 
 --
 
-## []()
+## [bit.ly/elm-europe-time](http://bit.ly/elm-europe-time)

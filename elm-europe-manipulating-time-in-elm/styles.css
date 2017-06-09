@@ -1,6 +1,7 @@
 /*@import url(http://fonts.googleapis.com/css?family=Droid+Serif);*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url('https://fonts.googleapis.com/css?family=Kalam');
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -115,12 +116,14 @@ img {
 }
 
 blockquote {
+  font-family: "Kalam";
   font-style: italic;
   font-size: 48px;
   line-height: 56px;
   margin: 80px auto;
-  border-left: 2px solid #fff;
   padding-left: 40px;
+  border-left: 6px solid lightblue;
+  padding-right: 10px;
 }
 
 .cover {
@@ -137,6 +140,8 @@ blockquote {
   text-align: center;
   padding: 20px 0;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 .cover h2 {
   width: 100%;
@@ -152,6 +157,9 @@ blockquote {
 }
 .white {
   background: white;
+}
+.inverse {
+  background: black;
 }
 @keyframes appear {
   from { opacity: 0; }

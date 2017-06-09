@@ -325,12 +325,21 @@ timeDiff =
 > Please be warned that there are many ways to manipulate dates that produce basically incorrect results.
 
 ---
+class: cover
+background-image: url(images/cosmicpower.jpg)
+background-size: cover
+background-position: center
+
+---
+class: cover
+background-image: url(images/tiny.jpg)
+background-size: cover
+background-position: center
+
+
+---
 
 ## elm-community/elm-time
-
---
-
-### when you need the big guns
 
 --
 
